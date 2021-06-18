@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TrainingAndAnalyticsDashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+
+    
+.frnt_img{
+    
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    background-color: #1070CA;
+    clip-path: polygon(70% 28%, 100% 0, 100% 100%, 0% 100%);
+}
+.exception_blur{
+    -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+/*
+-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+*/
+.login_page_main_card {
+    
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.login_page_main_card_row {
+    margin-top: 10px;
+    display: flex;
+    padding: 10px;
+}
+.login_heading_element {
+    color: #212529;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+}
+
+.login_paragragh_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login_heading_title_card {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.login_username2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_password2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_username1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    margin: 30px;
+    margin-bottom: 14px;
+}
+
+.login_password1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 30px;
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.login_register_now_btn {
+    border-radius: 4px;
+    border-style: none;
+    background-color: #1665D8;
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 30px;
+    width: 290px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    transition: all .5s;
+}
+.login_register_now_btn:hover{
+    transition: all .5s;
+    background-color: rgb(19, 204, 19);
+    transform: scale(1.01);
+}
+.login_btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.paragraph_element:hover {
+    text-decoration: underline;
+    transition: 2s;
+}
+
+.paragraph_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 2s;
+    text-decoration: none;
+}
+
+.href_container {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.loader1{
+    display: none;
+    z-index: 2;
+    align-self:center;
+    margin-left: 45%;
+   position: absolute;
+  
+ 
+  
+ 
+ 
+}
+
+/* Safari */
+/*@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+*/
+
+.loader_after{
+    display: block;
+}
+.error_msg_model{
+    display: none;
+    z-index: 3;
+    position: absolute;
+    margin-left: 45%;
+    background-color: #1665D8;
+    color: black;
+    padding: 10px;
+    margin-top: 10%;    
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all .5s;
+    opacity: 0;
+    
+    
+}
+.dis{
+    
+    display: block;
+    opacity: 1;
+    transition: all .5s;
+}
+.eror_msg_text{
+color: white;
+margin: 10px;
+
+}
+
+.error_mesg_button{
+    background-color: white;
+    color: #1665D8;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    height: 30px;
+    width: 100px;
+    margin-left: 32%;
+    border-style: none;
+    text-align: center;
+    
+    margin-top: 10px;
+    transition: all .5s;
+
+}
+.error_mesg_button:hover{
+    background-color: #4eec2e;
+    transform: scale(1.05);
+    transition: all .5s;
+}
+
+
+
+
+
+/*
+.loader { 
+    
+    margin-top: 150px;
+     position: relative; width: 64px; height: 64px; }
+.loader .circle { position: absolute; width: 61px; height: 61px; opacity: 0; -moz-transform: rotate(225deg); -moz-animation: orbit 7.15s infinite; -webkit-transform: rotate(225deg); -webkit-animation: orbit 7.15s infinite; -ms-transform: rotate(225deg); -ms-animation: orbit 7.15s infinite; -o-transform: rotate(225deg); -o-animation: orbit 7.15s infinite; transform: rotate(225deg); animation: orbit 7.15s infinite; }
+.loader .circle:after { content:''; position: absolute; width: 8px; height: 8px; background: #04C5DE; left: 0px; top: 0px; -moz-border-radius: 8px; -webkit-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
+.loader .circle:nth-child(1) { -moz-animation-delay: 1.56s; -webkit-animation-delay: 1.56s; -ms-animation-delay: 1.56s; -o-animation-delay: 1.56s; animation-delay: 1.56s; }
+.loader .circle:nth-child(2) { -moz-animation-delay: 0.31s; -webkit-animation-delay: 0.31s; -ms-animation-delay: 0.31s; -o-animation-delay: 0.31s; animation-delay: 0.31s; }
+.loader .circle:nth-child(3) { -moz-animation-delay: 0.62s; -webkit-animation-delay: 0.62s; -ms-animation-delay: 0.62s; -o-animation-delay: 0.62s; animation-delay: 0.62s; }
+.loader .circle:nth-child(4) { -moz-animation-delay: 0.94s; -webkit-animation-delay: 0.94s; -ms-animation-delay: 0.94s; -o-animation-delay: 0.94s; animation-delay: 0.94s; }
+.loader .circle:nth-child(5) { -moz-animation-delay: 1.25s; -webkit-animation-delay: 1.25s; -ms-animation-delay: 1.25s; -o-animation-delay: 1.25s; animation-delay: 1.25s; }
+
+@-moz-keyframes orbit {
+    0% { opacity: 1; z-index: 99; -moz-transform: rotate(180deg); -moz-animation-timing-function: ease-out; }
+    7% { opacity: 1; -moz-transform: rotate(300deg); -moz-animation-timing-function: linear; -moz-origin: 0%; }
+    30% { opacity: 1; -moz-transform: rotate(410deg); -moz-animation-timing-function: ease-in-out; -moz-origin: 7%; }
+    39% { opacity: 1; -moz-transform: rotate(645deg); -moz-animation-timing-function: linear; -moz-origin: 30%; }
+    70% { opacity: 1; -moz-transform: rotate(770deg); -moz-animation-timing-function: ease-out; -moz-origin: 39%; }
+    75% { opacity: 1; -moz-transform: rotate(900deg); -moz-animation-timing-function: ease-out; -moz-origin: 70%; }
+    76% { opacity: 0; -moz-transform: rotate(900deg); }
+    100% { opacity: 0; -moz-transform: rotate(900deg); }
+}
+
+@-webkit-keyframes orbit {
+    0% { opacity: 1; z-index: 99; -webkit-transform: rotate(180deg); -webkit-animation-timing-function: ease-out; }
+    7% { opacity: 1; -webkit-transform: rotate(300deg); -webkit-animation-timing-function: linear; -webkit-origin: 0%; }
+    30% { opacity: 1; -webkit-transform: rotate(410deg); -webkit-animation-timing-function: ease-in-out; -webkit-origin: 7%; }
+    39% { opacity: 1; -webkit-transform: rotate(645deg); -webkit-animation-timing-function: linear; -webkit-origin: 30%; }
+    70% { opacity: 1; -webkit-transform: rotate(770deg); -webkit-animation-timing-function: ease-out; -webkit-origin: 39%; }
+    75% { opacity: 1; -webkit-transform: rotate(900deg); -webkit-animation-timing-function: ease-out; -webkit-origin: 70%; }
+    76% { opacity: 0; -webkit-transform: rotate(900deg); }
+    100% { opacity: 0; -webkit-transform: rotate(900deg); }
+}
+
+@-ms-keyframes orbit {
+    0% { opacity: 1; z-index: 99; -ms-transform: rotate(180deg); -ms-animation-timing-function: ease-out; }
+    7% { opacity: 1; -ms-transform: rotate(300deg); -ms-animation-timing-function: linear; -ms-origin: 0%; }
+    30% { opacity: 1; -ms-transform: rotate(410deg); -ms-animation-timing-function: ease-in-out; -ms-origin: 7%; }
+    39% { opacity: 1; -ms-transform: rotate(645deg); -ms-animation-timing-function: linear; -ms-origin: 30%; }
+    70% { opacity: 1; -ms-transform: rotate(770deg); -ms-animation-timing-function: ease-out; -ms-origin: 39%; }
+    75% { opacity: 1; -ms-transform: rotate(900deg); -ms-animation-timing-function: ease-out; -ms-origin: 70%; }
+    76% { opacity: 0; -ms-transform: rotate(900deg); }
+    100% { opacity: 0; -ms-transform: rotate(900deg); }
+}
+
+@-o-keyframes orbit {
+    0% { opacity: 1; z-index: 99; -o-transform: rotate(180deg); -o-animation-timing-function: ease-out; }
+    7% { opacity: 1; -o-transform: rotate(300deg); -o-animation-timing-function: linear; -o-origin: 0%; }
+    30% { opacity: 1; -o-transform: rotate(410deg); -o-animation-timing-function: ease-in-out; -o-origin: 7%; }
+    39% { opacity: 1; -o-transform: rotate(645deg); -o-animation-timing-function: linear; -o-origin: 30%; }
+    70% { opacity: 1; -o-transform: rotate(770deg); -o-animation-timing-function: ease-out; -o-origin: 39%; }
+    75% { opacity: 1; -o-transform: rotate(900deg); -o-animation-timing-function: ease-out; -o-origin: 70%; }
+    76% { opacity: 0; -o-transform: rotate(900deg); }
+    100% { opacity: 0; -o-transform: rotate(900deg); }
+}
+
+@keyframes orbit {
+    0% { opacity: 1; z-index: 99; transform: rotate(180deg); animation-timing-function: ease-out; }
+    7% { opacity: 1; transform: rotate(300deg); animation-timing-function: linear; origin: 0%; }
+    30% { opacity: 1; transform: rotate(410deg); animation-timing-function: ease-in-out; origin: 7%; }
+    39% { opacity: 1; transform: rotate(645deg); animation-timing-function: linear; origin: 30%; }
+    70% { opacity: 1; transform: rotate(770deg); animation-timing-function: ease-out; origin: 39%; }
+    75% { opacity: 1; transform: rotate(900deg); animation-timing-function: ease-out; origin: 70%; }
+    76% { opacity: 0; transform: rotate(900deg); }
+    100% { opacity: 0; transform: rotate(900deg); }
+}
+<div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+         </div>
+*/
+.lds-roller {
+  
+  margin-top: 150px;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: blue;
+  margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  
+
+
+
+
+
+
+
+  </style>
+</head>
+<body style="background-color: #F0F0F0; margin: 0px;">
+
+    
+    <div id="loader_id" class="loader1">
+        
+        <div class="lds-roller"><div style="background-color: #1070CA;"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div id="error_msg_model_id" class="error_msg_model">
+        <div class="eror_msg_text">
+
+            <span>
+                Wrong UserName or Password !<br>
+                Please check your UserName and Password.<br>
+            </span>
+
+        </div>
+        
+        <button class="error_mesg_button" onclick="remove_error_model()">
+            ok
+        </button>
+    </div>
+  <div class="frnt_img">
+    
+</div>
+<div id="login_page_main_card_id" class="login_page_main_card">
+    <div class="login_page_main_card_row">
+        <img src="https://image.freepik.com/free-vector/student-activism-abstract-concept-vector-illustration-campus-activism-political-environmental-change-economic-social-movement-student-group-social-media-posting-abstract-metaphor_335657-1922.jpg" alt=""
+width="350" height="400">
+        <div class="adada">
+            <div class="login_heading_title_card">
+                <h1 class="login_heading_element">Login</h1>
+                <p class="login_paragragh_element">Enter your Details</p>
+            </div>
+            <div class="registerpageinput">
+                <div class="login_username1">
+                    <input type="text" id="registerno" class="login_username2" placeholder="UserName" >
+                </div>
+                <div class="login_password1">
+                    <input type="password" id="password" class="login_password2" placeholder="Password"  [value]="password">
+                </div>
+            
+            </div>
+            <div class="login_btn-container">
+                <button class="login_register_now_btn" onclick="student_login()">Login</button>
+                  
+              </div>
+              <div class="href_container">
+                  <a href="forgot_password_page.html">
+                      <p class="paragraph_element">Forgot Password</p>
+                  </a>
+              
+                  <a href="regester.html">
+                      <p class="paragraph_element">Not a User ? Sign Up</p>
+                  </a>
+
+                  <a href="lecturer_login.html">
+                    <p class="paragraph_element">Not a Student ? Log in as Lecturer</p>
+                </a>
+              </div>
+              
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    function remove_error_model()
+    {
+        document.getElementById("error_msg_model_id").classList.remove("dis")
+        document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+    }
+
+    function student_login()
+    {
+        redgno=document.getElementById("registerno").value;
+        password=document.getElementById("password").value;
+        document.getElementById("loader_id").classList.add("loader_after")
+        document.getElementById("login_page_main_card_id").classList.add("exception_blur");
+        $.ajax({
+               url:"http://127.0.0.1:5000/loginauthstud/"+redgno+','+password,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   if(result==false)
+                   {
+                       console.log("sdsds")
+                    document.getElementById("loader_id").classList.remove("loader_after")
+                    //document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                    document.getElementById("error_msg_model_id").classList.add("dis")
+                   }else{
+
+                    document.getElementById("loader_id").classList.remove("loader_after")
+                    document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                   localStorage.setItem("student_redgid",redgno)
+                   location.href='student_dashbord.html'
+                   }
+               },
+               error:function(error){
+                document.getElementById("loader_id").classList.remove("loader_after")
+                    document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                   console.log("error : ${error}")
+               }
+           })
+
+
+          /*d=fetch("http://127.0.0.1:5000/regester/"+redgno+','+email+','+password).then(
+              function(response){
+                  console.log(response)
+                  return response.json();
+              }
+          ).then(function(myjson){
+
+              console.log(myjson)
+              location.href='student_dashbord.html'
+          }).catch(function(error){
+              console.log("Error : "+error);
+          })
+          console.log(d.value)*/
+    }
+
+
+</script>
+
+
+</body>
+</html>

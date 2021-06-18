@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TrainingAndAnalyticsDashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+
+    
+.frnt_img{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    background-color: #F0F0F0; 
+    clip-path: polygon(70% 28%, 100% 0, 100% 100%, 0% 100%);
+}
+.exception_blur{
+    -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.login_page_main_card {
+    background-color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.login_page_main_card_row {
+    margin-top: 10px;
+    display: flex;
+    padding: 10px;
+}
+.login_heading_element {
+    color: #212529;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+}
+
+.login_paragragh_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login_heading_title_card {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.login_username2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_password2 {
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+.login_username1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    margin: 30px;
+    margin-bottom: 14px;
+}
+
+.login_password1 {
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 30px;
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.login_register_now_btn {
+    border-radius: 4px;
+    border-style: none;
+    background-color: #1665D8;
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 30px;
+    width: 290px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    transition: all .5s;
+}
+.login_register_now_btn:hover{
+    transition: all .5s;
+    background-color: rgb(19, 204, 19);
+    transform: scale(1.01);
+}
+
+.login_btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paragraph_element:hover {
+    text-decoration: underline;
+    transition: 2s;
+}
+
+.paragraph_element {
+    color: #9EA0A5;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 2s;
+    text-decoration: none;
+}
+
+.href_container {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loader {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    align-self:center;
+    margin-left: 45%;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader_after{
+    display: block;
+}
+
+
+.error_msg_model{
+    display: none;
+    z-index: 3;
+    position: absolute;
+    margin-left: 45%;
+    background-color: #1665D8;
+    color: black;
+    padding: 10px;
+    margin-top: 10%;    
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all .5s;
+    opacity: 0;
+    
+    
+}
+.dis{
+    
+    display: block;
+    opacity: 1;
+    transition: all .5s;
+}
+.eror_msg_text{
+color: white;
+margin: 10px;
+
+}
+
+.error_mesg_button{
+    background-color: white;
+    color: #1665D8;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    height: 30px;
+    width: 100px;
+    margin-left: 32%;
+    border-style: none;
+    text-align: center;
+    
+    margin-top: 10px;
+    transition: all .5s;
+
+}
+.error_mesg_button:hover{
+    background-color: #4eec2e;
+    transform: scale(1.05);
+    transition: all .5s;
+}
+
+
+  </style>
+</head>
+<body style="background-color: #1070CA; margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+    <div id="loader_id" class="loader"></div>
+    <div id="error_msg_model_id" class="error_msg_model">
+        <div class="eror_msg_text">
+
+            <span>
+                Wrong UserName or Password !<br>
+                Please check your UserName and Password.<br>
+            </span>
+
+        </div>
+        
+        <button class="error_mesg_button" onclick="remove_error_model()">
+            ok
+        </button>
+    </div>
+
+
+
+  <div class="frnt_img">
+    
+</div>
+<div id="login_page_main_card_id" class="login_page_main_card">
+    <div class="login_page_main_card_row">
+        <img src="https://image.freepik.com/free-vector/man-professor-teacher-icon_48369-2696.jpg" alt=""
+width="350" height="400">
+        <div class="adada">
+            <div class="login_heading_title_card">
+                <h1 class="login_heading_element">Login</h1>
+                <p class="login_paragragh_element">Enter your Details</p>
+            </div>
+            <div class="registerpageinput">
+                <div class="login_username1">
+                    <input type="text" class="login_username2" placeholder="UserName" id="registerno" >
+                </div>
+                <div class="login_password1">
+                    <input type="password" class="login_password2" placeholder="Password" id="password" [value]="password">
+                </div>
+            
+            </div>
+            <div class="login_btn-container">
+                <button class="login_register_now_btn" onclick="lecturer_login()">Login</button>
+                  
+              </div>
+              <div class="href_container">
+                  <a href="for">
+                      <p class="paragraph_element">Forgot Password</p>
+                  </a>
+              
+                  <a href="regester.html">
+                      <p class="paragraph_element">Not a User ? Sign Up</p>
+                  </a>
+
+                  <a href="index.html">
+                    <p class="paragraph_element">Not a Lecturer ? Log in as Student</p>
+                </a>
+              </div>
+              
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+     function remove_error_model()
+    {
+        document.getElementById("error_msg_model_id").classList.remove("dis")
+        document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+    }
+
+
+    function lecturer_login()
+    {
+        redgno=document.getElementById("registerno").value;
+        password=document.getElementById("password").value;
+
+        document.getElementById("loader_id").classList.add("loader_after")
+        document.getElementById("login_page_main_card_id").classList.add("exception_blur");
+
+        $.ajax({
+               url:"http://127.0.0.1:5000/loginauthlec/"+redgno+','+password,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   if(result==false)
+                   {
+                    console.log("sdsds")
+                    document.getElementById("loader_id").classList.remove("loader_after")
+                    //document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                    document.getElementById("error_msg_model_id").classList.add("dis")
+                   }else{
+                    document.getElementById("loader_id").classList.remove("loader_after")
+                    document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                    localStorage.setItem("lecturer_redgid",redgno)
+                   location.href='lecturer_version.html'
+                   }
+                   
+               },
+               error:function(error){
+                document.getElementById("loader_id").classList.remove("loader_after")
+                    document.getElementById("login_page_main_card_id").classList.remove("exception_blur");
+                   console.log("error : ${error}")
+               }
+           })
+
+
+          /*d=fetch("http://127.0.0.1:5000/regester/"+redgno+','+email+','+password).then(
+              function(response){
+                  console.log(response)
+                  return response.json();
+              }
+          ).then(function(myjson){
+
+              console.log(myjson)
+              location.href='student_dashbord.html'
+          }).catch(function(error){
+              console.log("Error : "+error);
+          })
+          console.log(d.value)*/
+    }
+
+
+</script>
+</body>
+</html>

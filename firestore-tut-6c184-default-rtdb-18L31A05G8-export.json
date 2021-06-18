@@ -1,0 +1,48 @@
+{
+  "attendance" : {
+    "present" : 75
+  },
+  "percentage" : 75,
+  "subjects" : {
+    "cd" : {
+      "mid1" : 23,
+      "mid2" : 0,
+      "weekly1" : 10,
+      "weekly2" : 9,
+      "weekly3" : 0,
+      "weekly4" : 0
+    },
+    "daa" : {
+      "mid1" : 22,
+      "mid2" : 0,
+      "weekly1" : 8,
+      "weekly2" : 9,
+      "weekly3" : 0,
+      "weekly4" : 0
+    },
+    "dmt" : {
+      "mid1" : 23,
+      "mid2" : 0,
+      "weekly1" : 9,
+      "weekly2" : 10,
+      "weekly3" : 0,
+      "weekly4" : 0
+    },
+    "python" : {
+      "mid1" : 25,
+      "mid2" : 0,
+      "weekly1" : 10,
+      "weekly2" : 9,
+      "weekly3" : 0,
+      "wekkly4" : 0
+    },
+    "unix" : {
+      "mid1" : 22,
+      "mid2" : 0,
+      "weekly1" : 10,
+      "weekly2" : 9,
+      "weekly3" : 0,
+      "weekly4" : 0
+    }
+  }
+}

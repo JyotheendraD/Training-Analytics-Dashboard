@@ -1,0 +1,247 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        .nav-btn-decoration {
+            height: fit-content;
+            width: fit-content;
+        }
+        
+        .nav-btn-decorations {
+            background: #304352;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #d7d2cc, #304352);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #d7d2cc, #304352);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        .card-decorations {
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: Roboto;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .navbar-logo-decoration {
+            height: 50px;
+            width: 50px;
+        }
+        
+        .head-decorations {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 28px;
+            text-align: center;
+            color: #3C1874;
+            font-weight: bold;
+            margin-bottom: 15;
+        }
+        
+        .upload-component-decorations {
+            padding: 3px;
+            margin-bottom: 30px;
+        }
+        
+        .bg-container {
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+            padding-bottom: 82px;
+            padding-top: 50px;
+        }
+        
+        p {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-decorations pt-4 pb-4">
+        <a class="navbar-brand" href="#">
+            <img src="https://res.cloudinary.com/killuax27/image/upload/v1616167740/482px-Vignan_logo_kuhxhl.png" class="navbar-logo-decoration" alt=""> Vignan
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">My Profile</a>
+                <button class="btn btn-dark">Logout</button>
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="bg-container">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-12 col-md-4 ">
+                    <div class="card-decorations shadow p-3">
+
+                        <h1 class="head-decorations">Year & Semister</h1>
+                        <div class="d-flex flex-row justify-content-center ">
+                            <div class="pr-4">
+                                <input type="radio" id="year1" name="Year" value="1">
+                                <label for="year1">1<sup>st</sup> Year</label><br>
+                                <input type="radio" id="year2" name="Year" value="2">
+                                <label for="year2">2<sup>nd</sup> Year</label><br>
+                                <input type="radio" id="year3" name="Year" value="3">
+                                <label for="year3">3<sup>rd</sup> Year</label><br>
+                                <input type="radio" id="year4" name="Year" value="4">
+                                <label for="year4">4<sup>th</sup> Year</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="sem1" name="semister" value="1">
+                                <label for="year1">1<sup>st</sup> Semister</label><br>
+                                <input type="radio" id="sem2" name="semister" value="2">
+                                <label for="year2">2<sup>nd</sup> Semister</label><br>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card-decorations shadow p-3">
+                        <h1 class="head-decorations">Branch</h1>
+
+
+                        <div class="d-flex justify-content-center">
+                            <div class="pr-4">
+
+                                <input type="radio" id="branchcse" name="Branch" value="1">
+                                <label for="branchcse">CSE</label><br>
+                                <input type="radio" id="branchmech" name="Branch" value="2">
+                                <label for="branchmech">MECH</label><br>
+                                <input type="radio" id="branchit" name="Branch" value="3">
+                                <label for="branchit">IT</label><br>
+                                <input type="radio" id="branchecm" name="Branch" value="4">
+                                <label for="branchecm">ECM</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="brancheee" name="Branch" value="5">
+                                <label for="brancheee">EEE</label><br>
+                                <input type="radio" id="branchciv" name="Branch" value="6">
+                                <label for="branchciv">CIVIL</label><br>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-md-4 ">
+                    <div class="card-decorations shadow p-3">
+                        <h1 class="head-decorations">Section</h1>
+                        <div class="d-flex justify-content-center">
+                            <div>
+                                <input type="radio" id="sec1" name="Section" value="1">
+                                <label for="sec1">Section - 1</label><br>
+                                <input type="radio" id="sec2" name="Section" value="2">
+                                <label for="sec2">Section - 2</label><br>
+                                <input type="radio" id="sec3" name="Section" value="3">
+                                <label for="sec3">Section - 3</label><br>
+                                <input type="radio" id="sec4" name="Section" value="4">
+                                <label for="sec4">Section - 4</label><br>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-12 col-md-12">
+
+                    <div class="card-decorations shadow p-3">
+                        <h1 class="head-decorations">Upload Files</h1>
+                        <hr>
+                        <h1 class="head-decorations mb-3"> Category </h1>
+
+                        <div class="d-flex flex-row justify-content-start">
+
+                            <div class="upload-component-decorations">
+                                <div class="mb-3">
+                                    <p>Semister</p>
+
+                                    <input id="semfile" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+
+                                </div>
+                                <div class="mb-3">
+                                    <p>Attendence</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <p>MID 1</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+                                <div class="mb-3">
+
+                                    <p>MID 2</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+                                <div class="mb-3">
+
+
+
+                                    <p>Weekly Test 1</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+                                <div class="mb-3">
+                                    <p>Weekly Test 2</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+                                <div class="mb-3">
+                                    <p>Weekly test 3</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+                                <div class="mb-3">
+
+
+
+                                    <p>Weekly Test 4</p>
+                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="text-center">
+                            <button class="btn btn-primary"><span>Submit</span></button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
