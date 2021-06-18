@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TrainingAndAnalyticsDashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stytles/student_dash_board.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #F0F0F0; margin: 0px;">
+
+
+
+    <div class="student_dashbord_row" style="background-color: #F7F8FC;">
+        <div class="side_nav">
+            <div class="logo_of_student">
+                <img class="logo_of_student_img" src="studentuser.png">
+                <h2 id="redgenum" style="color: white; font-family: Arial, Helvetica, sans-serif;transform: translateX(-15px);">
+
+                </h2>
+            </div>
+                
+
+            <span class="current_semester_title">
+                Current Year
+            </span>
+            <div class="currernt_semester_catagory">
+                <div class="currentsemester">
+                    <span>Year 1</span>
+                </div>
+                <div class="current_semester_list_year"">
+                    <ul class="current_semester_list_structur">
+
+                        <li class="current_semester_list_structur_lists">Year 1</li>
+                        <li class="current_semester_list_structur_lists">Year 2</li>
+                        <li class="current_semester_list_structur_lists">Year 3</li>
+                        <li class="current_semester_list_structur_lists">Year 4</li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+                <span class="current_semester_title">
+                    Current semester
+                </span>
+                <div class="currernt_semester_catagory">
+                    <div class="currentsemester">
+                        <span>Semester 1</span>
+                    </div>
+                    <div class="current_semester_list">
+                        <ul class="current_semester_list_structur">
+
+                            <li class="current_semester_list_structur_lists">semester 1</li>
+                            <li class="current_semester_list_structur_lists">semester 2</li>
+                          
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                
+
+                
+            <div class="subjects">
+
+                <p class="subjects_bdr">
+                    Subjects
+                </p>
+
+            </div>
+            <div class="subject1" onclick="getsubject1()">
+
+                <p class="original_subs subject1" id="sub1">
+                    subject1
+                </p>
+
+
+
+            </div>
+            <div class="subject2" >
+
+                <p class="original_subs subject2" id="sub2" onclick="getsubject2()">
+                    {{subject2}}
+                </p>
+
+
+            </div>
+            <div class="subject3" onclick="getsubject3();">
+
+                <p class="original_subs subject3" id="sub3">
+                    {{subject3}}
+                </p>
+
+
+            </div>
+            <div class="subject4" onclick="getsubject4();">
+
+                <p class="original_subs subject4" id="sub4">
+                    {{subject4}}
+                </p>
+
+
+            </div>
+            <div class="subject5" onclick="getsubject5();">
+
+                <p class="original_subs subject5" id="sub5">
+                    {{subject5}}
+                </p>
+
+
+
+            </div>
+            <div class="subject6" onclick="getsubject6();">
+
+                <p class="original_subs subject6" id="sub6">
+                    {{subject6}}
+                </p>
+
+
+            </div>
+
+            <a onclick="logout_from_this_page()">
+                <div class="logout_btn">
+                    <span>
+                    Logout
+                   </span>
+
+
+                </div>
+            </a>
+
+
+
+        </div>
+        <div class="main_part">
+            <div class="overView">
+                <p>
+                    OverView
+                </p>
+            </div>
+            
+            <div class="parent_graph_card">
+                <div class="Graph_card">
+                    <div class="line_graph">
+                        <canvas id="myChart" width="600" height="400"></canvas>
+                    </div>
+                    <div class="pie_graph">
+                        <canvas id="myChart1" width="400" height="400">
+
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="achivements_and_certificates">
+                <div class="achivements">
+                    <div class="achivements_title">
+                       
+                            <img class="achivements_icon" src="award.png" alt="">
+                       
+                        <div class="achivements_title"> 
+                            <span>
+                                Achivements
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="achivements_inner_list">
+                        <ul class="achivements_inner_ul">
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="achive">
+                                CodeChef Campus repersentative
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="certificates">
+                    <div class="certificates_title_block">
+                        <img class="winner_icon" src="winner.png" alt="">
+
+                        <div class="certificates_title"> 
+                            <span>
+                                Certificates
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="certificates_inner_list">
+                        <ul class="certificates_inner_ul">
+                            <li class="certificates_list">
+                                Successfully compleated the C++ course in the NPTEL.
+                            </li>
+                            <li class="certificates_list">
+                                CodeChef Campus repersentative
+                            </li>
+                            <li class="certificates_list">
+                                CodeChef Campus repersentative
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+
+             <div class="main_part_of_page">
+                <h2 id="current_subject">python</h2>
+                <div class="per_mid_att">
+    
+                    <div class="per_mid_att_part1">
+                        <div class="sem_percentage">
+                            <h2>
+                                Total Percentage
+                            </h2>
+                            <h1 id="total_percentage" style="font-size:small" >
+                                fetching result..
+                            </h1>
+                        </div>
+                        <div class="mid1">
+                            <h2>
+                                Mid-1
+                            </h2>
+                            <h1 id="mid1_marks" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="per_mid_att_part1">
+                        <div class="mid2">
+                            <h2>
+                                Mid-2
+                            </h2>
+                            <h1 id="mid2_marks" style="font-size:small">
+                                fetching result..
+                            </h1>
+    
+                        </div>
+                        <div class="attendence">
+                            <h2>
+                                Attendence
+                            </h2>
+                            <h1 id="attendence" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="per_mid_att">
+    
+                    <div class="per_mid_att_part1">
+                        <div class="Weekly1">
+                            <h2>
+                                Weekly-1
+                            </h2>
+                            <h1 id="weeklytest1" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                        <div class="Weekly2">
+                            <h2>
+                                Weekly-2
+                            </h2>
+                            <h1 id="weeklytest2" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="per_mid_att_part1">
+                        <div class="Weekly3">
+                            <h2>
+                                Weekly-3
+                            </h2>
+                            <h1 id="weeklytest3" style="font-size:small">
+                                fetching result..
+                            </h1>
+    
+                        </div>
+                        <div class="Weekly4">
+                            <h2>
+                                Weekly-4
+                            </h2>
+                            <h1 id="weeklytest4" style="font-size:small">
+                                fetching result..
+                            </h1>
+                        </div>
+                    </div>
+    
+                </div>
+    
+    
+                <div class="powerdby">
+                    <p>
+                        Powerd by Marvels creed
+                    </p>
+                </div>
+             </div>
+
+
+        </div>
+    </div>
+
+    <script>
+         
+
+         function logout_from_this_page(){
+             localStorage.removeItem("student_redgid");
+            location.href='index.html'
+         }
+
+
+
+
+        redgno = localStorage.getItem("student_redgid");
+        document.getElementById("redgenum").innerHTML = localStorage.getItem("student_redgid");
+        document.getElementById("sub1").innerHTML = "python";
+        document.getElementById("sub2").innerHTML = "Daa";
+        document.getElementById("sub3").innerHTML = "Dmt";
+        document.getElementById("sub4").innerHTML = "unix";
+        document.getElementById("sub5").innerHTML = "CD";
+        document.getElementById("sub6").innerHTML = "Human values and ethics";
+        current_sub=document.getElementById("sub1").textContent;
+
+        console.log(current_sub)
+        $.ajax({
+               url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest1").classList.add("attendence_After");
+                   document.getElementById("weeklytest1").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest1").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest2").classList.add("attendence_After");
+                   document.getElementById("weeklytest2").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest2").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest3").classList.add("attendence_After");
+                   document.getElementById("weeklytest3").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest3").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest4").classList.add("attendence_After");
+                   document.getElementById("weeklytest4").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest4").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid1_marks").classList.add("attendence_After");
+                   document.getElementById("mid1_marks").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid1_marks").innerHTML = "null";
+               }
+           })
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid2_marks").classList.add("attendence_After");
+                   document.getElementById("mid2_marks").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid2_marks").innerHTML = "null";
+               }
+           })
+
+
+
+        
+           global_attendence=80
+        $.ajax({
+               url:"http://127.0.0.1:5000/attendence/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   global_attendence=result
+                   document.getElementById("attendence").classList.add("attendence_After");
+                   document.getElementById("attendence").innerHTML = result;
+                   var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+                   
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("attendence").innerHTML = "null";
+               }
+           })
+       
+
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/percentage/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("total_percentage").classList.add("attendence_After");
+
+                   document.getElementById("total_percentage").innerHTML = result;
+                  var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("total_percentage").innerHTML = "null";
+               }
+           })
+
+
+
+
+
+
+
+           function getsubject1(){
+
+
+            var cols=document.getElementsByClassName("attendence_After");
+                  for(i = 0; i < cols.length; i++) {
+                   cols[i].style.fontSize="small";
+                   cols[i].style.fontSize="medium";
+                    }
+
+
+            current_sub="python";
+            document.getElementById("current_subject").innerHTML="Python"
+            document.getElementById("weeklytest1").innerHTML = "fetching result...";
+    document.getElementById("weeklytest2").innerHTML = "fetching result...";
+    document.getElementById("weeklytest3").innerHTML = "fetching result...";
+    document.getElementById("weeklytest4").innerHTML = "fetching result...";
+    document.getElementById("mid1_marks").innerHTML = "fetching result...";
+    document.getElementById("mid2_marks").innerHTML = "fetching result...";
+        console.log(current_sub)
+        $.ajax({
+               url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest1").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest1").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest2").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest2").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest3").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest3").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("weeklytest4").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("weeklytest4").innerHTML = "null";
+               }
+           })
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid1_marks").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid1_marks").innerHTML = "null";
+               }
+           })
+
+           $.ajax({
+               url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   document.getElementById("mid2_marks").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("mid2_marks").innerHTML = "null";
+               }
+           })
+           
+                  for(i = 0; i < cols.length; i++) {
+    cols[i].style.fontSize="x-large";
+  }
+           }
+
+
+ function getsubject2(){
+
+    document.getElementById("current_subject").innerHTML="daa"
+    document.getElementById("weeklytest1").innerHTML = "fetching result...";
+    document.getElementById("weeklytest2").innerHTML = "fetching result...";
+    document.getElementById("weeklytest3").innerHTML = "fetching result...";
+    document.getElementById("weeklytest4").innerHTML = "fetching result...";
+    document.getElementById("mid1_marks").innerHTML = "fetching result...";
+    document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Data Analysis And Design"
+console.log(current_sub)
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest1").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest1").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest2").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest2").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest3").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest3").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("weeklytest4").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("weeklytest4").innerHTML = "null";
+   }
+})
+$.ajax({
+   url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("mid1_marks").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("mid1_marks").innerHTML = "null";
+   }
+})
+
+$.ajax({
+   url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+   type:"GET",
+   success:function(result){
+       console.log(result)
+       document.getElementById("mid2_marks").innerHTML = result;
+   },
+   error:function(error){
+       console.log("error : ${error}")
+       document.getElementById("mid2_marks").innerHTML = "null";
+   }
+})
+
+}
+
+
+
+function getsubject3(){
+
+document.getElementById("current_subject").innerHTML="dmt"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Data Mining"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+
+
+function getsubject4(){
+
+document.getElementById("current_subject").innerHTML="unix"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Unix"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+function getsubject5(){
+
+document.getElementById("current_subject").innerHTML="cd"
+document.getElementById("weeklytest1").innerHTML = "fetching result...";
+document.getElementById("weeklytest2").innerHTML = "fetching result...";
+document.getElementById("weeklytest3").innerHTML = "fetching result...";
+document.getElementById("weeklytest4").innerHTML = "fetching result...";
+document.getElementById("mid1_marks").innerHTML = "fetching result...";
+document.getElementById("mid2_marks").innerHTML = "fetching result...";
+
+current_sub=document.getElementById("current_subject").textContent;
+document.getElementById("current_subject").innerHTML="Compiler Design"
+console.log(current_sub)
+$.ajax({
+url:"http://127.0.0.1:5000/weekly1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest1").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest1").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest2").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest2").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly3/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest3").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest3").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/weekly4/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("weeklytest4").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("weeklytest4").innerHTML = "null";
+}
+})
+$.ajax({
+url:"http://127.0.0.1:5000/mid1/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid1_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid1_marks").innerHTML = "null";
+}
+})
+
+$.ajax({
+url:"http://127.0.0.1:5000/mid2/"+redgno+","+current_sub,
+type:"GET",
+success:function(result){
+   console.log(result)
+   document.getElementById("mid2_marks").innerHTML = result;
+},
+error:function(error){
+   console.log("error : ${error}")
+   document.getElementById("mid2_marks").innerHTML = "null";
+}
+})
+
+}
+
+        var ctx = document.getElementById('myChart');
+        $.ajax({
+               url:"http://127.0.0.1:5000/attendence/"+redgno,
+               type:"GET",
+               success:function(result){
+                   console.log(result)
+                   global_attendence=result
+                   document.getElementById("attendence").innerHTML = result;
+               },
+               error:function(error){
+                   console.log("error : ${error}")
+                   document.getElementById("attendence").innerHTML = "null";
+               }
+           })
+           
+        var myChart = new Chart(ctx, {
+            
+            type: 'line',
+            data: {
+                labels: ['Sem 1-1-', 'Sem1-2', 'Sem 2-1', 'Sem 2-2', 'Sem 3-1', 'Sem 3-2'],
+                datasets: [{
+                    label: 'semester percentage %',
+                    data: [80, 32, 83, 33, 82, 83],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx = document.getElementById('myChart1');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Absent', 'Present', 'Partial'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [10, global_attendence, 10],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(153, 102, 255, 0.8)',
+                        'rgba(255, 206, 86, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)',
+                        'rgba(255, 255, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>
